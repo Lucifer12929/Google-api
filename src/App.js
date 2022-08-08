@@ -72,49 +72,67 @@ function App() {
         <div className='main_container'>
 
         <div className='body_left'>
+          <div className='flex-box'>
           <div className='input_field'>
             <h1>Origin</h1>
            <div className='input_box'>
            
            <img className="marker" src={marker} alt="marker" />
            
-           
-              <input type='text' placeholder='Origin' ref={originRef} />
-            
+            <Autocomplete>
+              <input type='text' placeholder='Origin' ref={originRef} className='input'/>
+            </Autocomplete>
             
             </div>
 
             <h1>Destination</h1>
             <div className='input_box'>
             <img className="marker" src={marker} alt="marker" />
+            <Autocomplete>
               <input
                 type='text'
                 placeholder='Destination'
                 ref={destiantionRef}
+                className='input'
               />
+              </Autocomplete>
+          </div>
+          </div>
+          <div className='button_field'>
+        <div className='cal_button'>
+            <button className='button1'  type='submit' onClick={calculateRoute}>
+              Calculate
+            </button>
+             </div>
+          </div>
           </div>
          <div className='bottom_card'>
           <div className='distance_cal'>
              <div className='cal1'>Distance:</div>
-             <div className='cal2'>{distance}</div>
+             <div className='cal2'>{!(distance=='') ? <p>{distance}</p>:<p>0 km</p>}</div>
            </div>
-           {!(distance=='') && (
+           {!(distance=='') ? 
               <h4 className="output-text">
                 The distance between <span className="bold">{originRef.current.value}</span> and{" "}
                 <span className="bold">{destiantionRef.current.value}</span> is{" "}
                 <span className="bold">{distance}</span>.
               </h4>
-            )}
+            :
+            <h4 className="output-text">
+                The distance between <span className="bold">Origin</span> and{" "}
+                <span className="bold">Destination</span> is{" "}
+                <span className="bold">0 km</span>.
+              </h4>}
           </div>
 
-        </div>
-        <div className='button_field'>
+        
+        {/* <div className='button_field'>
         <div className='cal_button'>
-            <Button colorScheme='blue' type='submit' onClick={calculateRoute}>
-              Calculate Route
-            </Button>
+            <button className='button1'  type='submit' onClick={calculateRoute}>
+              Calculate
+            </button>
              </div>
-          </div>
+          </div> */}
         </div>
 
         <div className='body_right'>

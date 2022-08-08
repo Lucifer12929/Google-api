@@ -73,13 +73,14 @@
     
   
 }
+
 .input_box{
 
     
    width:fit-content;
   height: 2.4rem;
   margin-top: 0.2rem;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   
   border-width: 0;
   display: flex;
@@ -91,22 +92,41 @@
   font-weight: bold;
   font-size: 1.2rem;
 }
-.input_box>input{
+.input{
     outline: none;
 }
 
 .button_field{
-
-    padding-top:14%;
+    
+    padding-top:20%;
     height: 60%;
+    
+}
+.cal_button>button{
+  
+  
+  height: 100%;
+  padding: 10px;
+ 
+ background: blue;
+ width: 150px;
+ color: white;
+  
+}
+.button1{
+  
+  border-radius:15px;
+ 
 }
 .distance_cal{
     
     display: flex;
     gap:11rem;
-    padding-top: 3px;
+   
     padding-left:10px;
-    height: 38px;
+    height: 70px;
+    align-items: center;
+    width: 100%;
     background-color: white;
     margin-bottom: 10px;
 }
@@ -118,4 +138,11 @@
     color:blue;
     font-size: larger;
     font-weight: bold;
+}
+.flex-box{
+  display: flex;
+  gap:2rem;
+}
+.bottom_card{
+  width: 60%;
 }
